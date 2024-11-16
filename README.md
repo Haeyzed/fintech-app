@@ -45,7 +45,7 @@ The FinTech Platform enables users to:
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v14 or later)
-- [bun](https://bun.io/)
+- [bun](https://bun.sh/)
 
 ### Installation
 
