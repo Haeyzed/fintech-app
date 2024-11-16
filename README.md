@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FinTech Platform Frontend
+
+This project is the frontend of a FinTech platform designed to enable users to
+register, link bank accounts, manage transactions, and view their transaction
+history. It is built using **Next.js** with **React** and styled using
+**TailwindCSS**.
+
+## Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Tech Stack](#tech-stack)
+3. [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Environment Variables](#environment-variables)
+4. [Running the Project](#running-the-project)
+5. [Folder Structure](#folder-structure)
+6. [Features](#features)
+7. [User Flow](#user-flow)
+8. [API Integration](#api-integration)
+9. [Testing](#testing)
+10. [Deployment](#deployment)
+11. [Additional Notes](#additional-notes)
+
+---
+
+## Project Overview
+
+The FinTech Platform enables users to:
+
+1. **Register and Log in**
+2. **Link Bank Account or Payment Gateway**
+3. **Deposit and Withdraw Funds**
+4. **View Transaction History**
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TailwindCSS
+- **Authentication**: OAuth 2.0, JWT
+- **State Management**: Redux / Context API
+- **Testing**: Jest
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [bun](https://bun.io/)
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone git@github.com:Haeyzed/fintech-web.git
+   cd fintech-web
+   ```
+
+2. **Install dependencies**
+   ```bash
+   bun install
+   ```
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add the following
+variables:
+
+```
+NEXT_PUBLIC_API_URL=your_api_url_here
+NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=your_paystack_public_key_here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running the Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Start the development server**
+   ```bash
+   bun run dev
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Folder Structure
 
-## Learn More
+```
+fintech-web/
+├── components/
+├── pages/
+├── public/
+├── styles/
+├── lib/
+├── hooks/
+├── context/
+├── types/
+└── tests/
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- User Authentication (Register, Login, Logout)
+- Bank Account Management
+- Transaction Processing (Deposits and Withdrawals)
+- Transaction History
+- User Profile Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## User Flow
 
-## Deploy on Vercel
+1. **Login**: User logs into their account
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Create Nigerian Bank Account**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    - Navigate to the "Bank Accounts" section
+    - Click on "Add New Account"
+    - Fill in the following details:
+        - Account Number
+        - Select Bank from dropdown
+        - Select Currency from dropdown
+        - Select Account Type from dropdown
+        - Check the "Primary Account" box if applicable
+    - Click "Add Bank Account" to save
+
+3. **Make a Deposit**:
+
+    - Go to the "Transactions" section
+    - Click on "Deposit"
+    - Enter the deposit amount
+    - Select Payment Method from dropdown
+    - Select Bank Account from dropdown
+    - Add an optional description
+    - Click "Deposit" to confirm
+
+4. **Perform a Withdrawal**:
+    - Navigate to the "Transactions" or "Wallet" section
+    - Click on "Withdraw"
+    - Enter the withdrawal amount
+    - Select Payment Method from dropdown
+    - Select Bank Account from dropdown
+    - Add an optional description
+    - Enter the Reference Code (if required)
+    - Click "Withdraw" to confirm
+
+Note: Users can have multiple bank accounts assigned to their profile and can
+choose which account to use for deposits or withdrawals.
+
+## API Integration
+
+- Describe how the frontend integrates with your backend API
+- Include any authentication methods used
+
+## Testing
+
+- Explain how to run tests
+- Describe the testing strategy (unit tests, integration tests, etc.)
+
+## Deployment
+
+- Provide instructions for deploying the application
+
+## Additional Notes
+
+- Any other relevant information about the project
+- Known issues or limitations
+- Future improvements or features planned
